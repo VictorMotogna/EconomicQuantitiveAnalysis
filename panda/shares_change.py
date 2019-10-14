@@ -1,22 +1,29 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-ticker = pd.read_csv('ticker_data.csv')
+def read_data_from_file(filename):
+  return pd.read_csv(filename)
+
+def set_data_list():
+  data = {'INTC': 'Intel',
+          'MSFT': 'Microsoft',
+          'IBM': 'IBM',
+          'BHP': 'BHP',
+          'TM': 'Toyota',
+          'AAPL': 'Apple',
+          'AMZN': 'Amazon',
+          'BA': 'Boeing',
+          'QCOM': 'Qualcomm',
+          'KO': 'Coca-Cola',
+          'GOOG': 'Google',
+          'SNE': 'Sony',
+          'PTR': 'PetroChina'}
+  return data
+
+ticker = read_data_from_file('ticker_data.csv')
 ticker.set_index('Date', inplace=True)
 
-ticker_list = {'INTC': 'Intel',
-               'MSFT': 'Microsoft',
-               'IBM': 'IBM',
-               'BHP': 'BHP',
-               'TM': 'Toyota',
-               'AAPL': 'Apple',
-               'AMZN': 'Amazon',
-               'BA': 'Boeing',
-               'QCOM': 'Qualcomm',
-               'KO': 'Coca-Cola',
-               'GOOG': 'Google',
-               'SNE': 'Sony',
-               'PTR': 'PetroChina'}
+ticker_list = set_data_list()
 
 price_change = pd.Series()
 
