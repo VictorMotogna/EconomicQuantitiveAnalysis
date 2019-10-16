@@ -20,6 +20,9 @@ def set_data_list():
           'PTR': 'PetroChina'}
   return data
 
+def show_plot():
+  plt.show()
+
 ticker = read_data_from_file('ticker_data.csv')
 ticker.set_index('Date', inplace=True)
 
@@ -35,4 +38,5 @@ for tick in ticker_list:
 price_change.sort_values(inplace=True)
 fig, ax = plt.subplots(figsize=(10,8))
 price_change.plot(kind='bar', ax=ax)
-plt.show()
+
+show_plot()
