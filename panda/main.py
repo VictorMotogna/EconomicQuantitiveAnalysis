@@ -6,6 +6,9 @@ import matplotlib.pyplot as plt
 # s = pd.Series(np.random.randn(4), name='daily returns')
 # print(s.describe())
 
+def show_plot():
+  plt.show()
+
 # DataFrame example
 df = pd.read_csv('test_pwt.csv')
 # print(df)
@@ -17,4 +20,5 @@ df['population'] = df['population'] * 1e3
 df['GDP percap'] = df['total GDP'] * 1e6 / df['population']
 
 df['GDP percap'].plot(kind='bar')
-plt.show()
+
+show_plot()
